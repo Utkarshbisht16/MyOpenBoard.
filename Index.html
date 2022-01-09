@@ -11,14 +11,13 @@
             margin: 0px;
         }
         .fas{
-            font-size: 2rem;
+            font-size: 3rem;
             margin-right: 30px;
             margin-left: 20px;
         }
         .fa-regular{
-            font-size: 2rem;
+            font-size: 3rem;
             margin-right: 30px;
-            margin-left: 20px;
         }
     </style>
 
@@ -76,8 +75,10 @@
         currToll = "lineTool";
     })
 
+    // solving margin issue casue of icons in the board
+   let extraTop = canvasBoard.getBoundingClientRect().top;
 
-   
+
     //shape tool - rectangle
     let body = document.querySelector("body");
     let ix,iy,Fx,Fy;
@@ -85,14 +86,14 @@
     body.addEventListener("mousedown",
     function(e){
         ix = e.clientX;
-        iy = e.clientY;
+        iy = e.clientY - extraTop;
             
     })
 
     body.addEventListener("mouseup",
     function(e){
         Fx = e.clientX;
-        Fy = e.clientY;
+        Fy = e.clientY - extraTop;
         let height = Fy - iy;
         let width = Fx - ix;
         if(currToll == "rectangleTool"){
