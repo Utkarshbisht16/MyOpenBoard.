@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- for icons -->
+    <style>
+        body{
+            margin: 0px;
+        }
+        .fas{
+            font-size: 2rem;
+            margin-right: 30px;
+            margin-left: 20px;
+        }
+        .fa-regular{
+            font-size: 2rem;
+            margin-right: 30px;
+            margin-left: 20px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- for shapes to work properly  -->
+
+
+    <!-- <h1> Welcome to my Canvas </h1> -->
+    <!-- <style>
+        body{
+            margin: 0px;
+        }
+    </style> -->
+
+    <!-- addding icons links -->
+    <i class="fas fa-square"></i>
+    <i class="fa-regular fa-grip-lines-vertical"></i>
+
+    <canvas></canvas>
+</body>
+<script>
+    let canvasBoard = document.querySelector("canvas");
+    // canvas default size is small.
+    canvasBoard.height = window.innerHeight;
+    canvasBoard.width = window.innerWidth;
+    // or
+    // canvasBoard.height = 600;
+    // canvasBoard.width = 300;
+
+    // creating a tool by which we can draw in canvas
+    let tool = canvasBoard.getContext("2d");
+    // creating a rectangle
+    // tool.fillStyle = "red";
+    // tool.fillRect(0,0,300,600);
+    // tool.strokeStyle = "blue";
+    // tool.strokeRect(10,15,300,220);
+    
+    
+    // clicking icon logic to select operation
+    let rectangleTool = document.querySelector(".fas");
+    let lineTool = document.querySelector(".fa-regular");
+    let currToll = "";
+
+    rectangleTool.addEventListener("click",
+    function(){
+         currToll = "rectangleTool";
+    })
+
+    
+    lineTool.addEventListener("click",
+    function(){
+        currToll = "lineTool";
+    })
+
+
+   
+    //shape tool - rectangle
+    let body = document.querySelector("body");
+    let ix,iy,Fx,Fy;
+
+    body.addEventListener("mousedown",
+    function(e){
+        ix = e.clientX;
+        iy = e.clientY;
+            
+    })
+
+    body.addEventListener("mouseup",
+    function(e){
+        Fx = e.clientX;
+        Fy = e.clientY;
+        let height = Fy - iy;
+        let width = Fx - ix;
+        if(currToll == "rectangleTool"){
+            tool.strokeRect(ix,iy,width,height);
+        }else if(currToll == "lineTool"){
+            tool.beginPath();
+            tool.moveTo(ix,iy);
+            tool.lineTo(Fx,Fy);
+            tool.stroke();
+        }
+    }) 
+
+    
+    if(currToll == "lineTool"){
+        //shape tool - line
+        console.log("line tool");
+    }
+
+    
+</script>
+</html>
