@@ -11,13 +11,44 @@
             margin: 0px;
         }
         .fas{
-            font-size: 3rem;
+            font-size: 2rem;
             margin-right: 30px;
             margin-left: 20px;
         }
         .fa-regular{
-            font-size: 3rem;
+            font-size: 2rem;
             margin-right: 30px;
+        }
+        .icon-bar{
+            background: lightgrey;
+            height: 50px;
+            width: 40%;
+            margin-left: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        .green{
+            background: green;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+
+        }
+        .red{
+            background: red;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+
+        }
+        .blue{
+            background: blue;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+
         }
     </style>
 
@@ -36,8 +67,14 @@
     </style> -->
 
     <!-- addding icons links -->
-    <i class="fas fa-square"></i>
-    <i class="fa-regular fa-grip-lines-vertical"></i>
+    <div class="icon-bar">
+        <i class="fas fa-square"></i>
+        <i class="fa-regular fa-grip-lines-vertical"></i>
+        <div class="green"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+    
 
     <canvas></canvas>
 </body>
