@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+</head>
+<body>
+    <div class="outer">
+        <div class="green"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+    <div class="display"></div>
+    <style>
+        .outer{
+            border: 1px solid black;
+            background:white;
+            height: 100px;
+            width: 250px;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .green{
+            background: green;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+
+
+            
+        }
+        .red{
+            background: red;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+
+        }
+        .blue{
+            background: blue;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+
+        }
+        .display{
+            border: 3px solid grey;
+            margin-top: 5%;
+            margin-left: 3%;
+            height: 50px;
+            width: 50px;
+            background: x;
+        }
+        body{
+            border: 2px solid orange;
+        }
+
+    </style>
+    <script>
+        let tool = document.querySelector(".display");
+        let gtool = document.querySelector(".green");
+        let btool = document.querySelector(".blue");
+        let rtool = document.querySelector(".red");
+       
+        
+        gtool.addEventListener("click", 
+        function(){
+            tool.style.backgroundColor = "green";
+        })
+        rtool.addEventListener("click",
+        function(){
+            tool.style.backgroundColor = "red";
+
+        })
+        btool.addEventListener("click",
+        function(){
+            tool.style.backgroundColor = "blue"
+        })
+        
+        
+
+    </script>
+</body>
+</html>
