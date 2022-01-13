@@ -126,6 +126,27 @@
     </script>
 
 </body>
+<!-- colour change logic -->
+<script>
+    let gtool = document.querySelector("#green");
+    let btool = document.querySelector("#blue");
+    let rtool = document.querySelector("#red");
+
+
+    gtool.addEventListener("click",
+        function () {
+            tool.strokeStyle = "green";
+        })
+    rtool.addEventListener("click",
+        function () {
+            tool.strokeStyle = "red";
+
+        })
+    btool.addEventListener("click",
+        function () {
+            tool.strokeStyle = "blue"
+        })
+</script>
 
 <!-- pencil - rect - line - code -->
 <script>
@@ -146,23 +167,6 @@
 
     let ix, iy, Fx, Fy;
     let pencilswitch = false;
-
-    // rect.addEventListener("click",
-    //     function () {
-    //         currToll = "rect";
-    //     })
-
-
-    // line.addEventListener("click",
-    //     function () {
-    //         currToll = "line";
-    //     })
-
-    // pencil.addEventListener("click",
-    //     function () {
-    //         currToll = "pencil";
-    //     })
-
 
     body.addEventListener("mousedown",
         function (e) {
