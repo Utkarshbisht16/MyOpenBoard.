@@ -1,5 +1,8 @@
 let ix, iy, Fx, Fy;
     let pencilswitch = false;
+    if(currtool == "eraser"){
+        tool.lineWidth = erasersize;
+    }
 
     body.addEventListener("mousedown",
         function (e) {
@@ -28,6 +31,7 @@ let ix, iy, Fx, Fy;
                 tool.stroke();
             }else if(currtool == "pencil" || currtool == "eraser"){
                 pencilswitch = false;
+                tool.strokeStyle = colour;
             }
         })
 

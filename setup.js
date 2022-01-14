@@ -12,4 +12,4 @@ let canvasBoard = document.querySelector("canvas");
     
     // solving margin issue casue of icons in the board
     let extraTop = canvasBoard.getBoundingClientRect().top;
-    tool.strokeStyle = "blue";
+    

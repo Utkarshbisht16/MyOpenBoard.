@@ -48,5 +48,35 @@
          <div class="size4 size"></div>
      </div>
  </body>
+<script>
+    let pencilsize = 5;
+    let erasersize = 5;
+    let rectsize = 5;
+    let linesize = 5;
 
+    // event bubbling
+    let sizebox = document.querySelector(".size-box");
+    sizebox.addEventListener("click",
+    function(e){
+        let elem = ["size1", "size2", "size3", "size4"];
+
+        let allclasses = e.target.classList;
+        let class1 = allclasses[0];
+
+        if(elem.includes(class1)){
+            if(class1 == "size1"){
+                pencilsize = 5;
+            }else if(class1 == "size2"){
+                pencilsize = 10;
+            }
+            else if(class1 == "size3"){
+                pencilsize = 15;
+            }
+            else if(class1 == "size4"){
+                pencilsize = 20;
+            }
+        }
+    })
+
+</script>
  </html> 
