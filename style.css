@@ -94,3 +94,51 @@
             height: 22px;
             width: 22px;
         }
+        #stickyTool{
+            font-size: 3rem;
+
+        }
+        /* sticky css */
+        .sticky{
+            
+            width: 200px;
+            height: 200px;
+            
+        }
+        .navbar{
+            
+            width: 195px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+            border: 2px solid lightseagreen;
+
+        }.textarea{
+            
+            width: 195px;
+            height: 150px;
+            border: none;
+            outline: none;
+            border-top: 2px solid lightseagreen;
+            box-shadow: 10px 5px 5px grey;
+
+           
+        }
+        .close{
+            
+            background:lightpink;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+
+        }
+        .minimise{
+            background: lightgreen;
+            fill: aquamarine;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
