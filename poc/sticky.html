@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .sticky{
+            
+            width: 200px;
+            height: 200px;
+            
+        }
+        .navbar{
+            
+            width: 195px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+            border: 2px solid lightseagreen;
+
+        }.textarea{
+            
+            width: 195px;
+            height: 150px;
+            border: none;
+            outline: none;
+            border-top: 2px solid lightseagreen;
+            box-shadow: 10px 5px 5px grey;
+
+           
+        }
+        .close{
+            
+            background:lightpink;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+
+        }
+        .minimise{
+            background: lightgreen;
+            fill: aquamarine;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sticky Notes</h1>
+    <button>click</button>
+
+    <!-- <div class="sticky">
+        <div class="navbar">
+            <div class="minimise"></div>
+            <div class="close"></div>
+        </div>
+        <textarea name="" class="textarea"></textarea>
+    </div> -->
+
+</body>
+<script>
+    let button = document.querySelector("button");
+    let body = document.querySelector("body");
+    button.addEventListener("click", // when clicked build sticky.
+    function(e){ 
+        //building body of sticky
+        let sticky = document.createElement("div");
+        sticky.setAttribute("class", "sticky");
+        sticky.innerHTML = `<div class="navbar">
+            <div class="minimise"></div>
+            <div class="close"></div>
+        </div>
+        <textarea name="" class="textarea"></textarea>`
+        // showing on screen
+        body.append(sticky);
+
+        // minimise code
+        let minimise = document.querySelector(".minimise");
+        let textarea = document.querySelector(".textarea");
+        let status = false; // not minimised
+        minimise.addEventListener("click",
+        function(e){
+            if(status == false){
+                textarea.style.display = "none";
+                status = true;
+            }else{
+                textarea.style.display = "flex";
+                status = false;
+            }
+        })
+
+        // close code
+        let close = document.querySelector(".close");
+        close.addEventListener("click",
+        function(e){
+            sticky.remove();
+        })
+    })
+</script>
+</html>
