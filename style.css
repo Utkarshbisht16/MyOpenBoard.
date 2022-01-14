@@ -58,6 +58,7 @@
         .outer{
             width: 100px;
             height: 100px;
+           
             
         }
         .size-box {
@@ -65,13 +66,13 @@
             height: 30px;
             margin-top: 8%;
             border: 1px solid gray;
-            display: flex;
+            /* display: flex; */
             align-items: center;
             justify-content: space-evenly;
             display: none;
         } 
         .size {
-            background-color: lightsteelblue;
+            background-color: aqua;
             border-radius: 50%; 
         }
 

@@ -52,7 +52,7 @@ rect.addEventListener("click",
 line.addEventListener("click",
     function () {
         if (currtool == "line") { // 2nd click
-            options[2].style.display = "flex";
+            options[3].style.display = "flex";
         } else {
             for (let i = 0; i < options.length; i++) {
                 options[i].style.display = "none";
@@ -167,5 +167,5 @@ line.addEventListener("click",
                 linesize = 15;
             }
         }
-        tool.lineWidth = lineSize;
+        tool.lineWidth = linesize;
     })
