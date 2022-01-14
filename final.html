@@ -61,160 +61,18 @@
         </div>
     </div>
     <canvas></canvas>
-    <!-- icon menu script code -->
-    <script>
-        let pencil = document.querySelector("#pencil");
-        let eraser = document.querySelector("#eraser");
-        let rect = document.querySelector("#rect");
-        let line = document.querySelector("#line");
-        let options = document.querySelectorAll(".size-box");
-        let currtool = "pencil";
-
-        // identify 2nd time click
-        pencil.addEventListener("click",
-            function () {
-                if (currtool == "pencil") { // 2nd click
-                    options[0].style.display = "flex";
-                } else {
-                    for (let i = 0; i < options.length; i++) {
-                        options[i].style.display = "none";
-                    }
-                    // pencil.style.border = "1px solid red"
-                    currtool = "pencil";
-                }
-            })
-        eraser.addEventListener("click",
-            function () {
-                if (currtool == "eraser") { // 2nd click
-                    options[1].style.display = "flex";
-                } else {
-                    for (let i = 0; i < options.length; i++) {
-                        options[i].style.display = "none";
-                    }
-                    // eraser.style.border = "1px solid red"
-                    currtool = "eraser";
-
-                }
-            })
-        rect.addEventListener("click",
-            function () {
-                if (currtool == "rect") { // 2nd click
-                    options[2].style.display = "flex";
-                } else {
-                    for (let i = 0; i < options.length; i++) {
-                        options[i].style.display = "none";
-                    }
-                    // download.style.border = "1px solid red"
-                    currtool = "rect";
-
-                }
-            })
-        line.addEventListener("click",
-            function () {
-                if (currtool == "line") { // 2nd click
-                    options[2].style.display = "flex";
-                } else {
-                    for (let i = 0; i < options.length; i++) {
-                        options[i].style.display = "none";
-                    }
-                    // download.style.border = "1px solid red"
-                    currtool = "line";
-
-                }
-            })
-
-    </script>
+    <!-- icon tool bar script code -->
+    <script src="./toobar.js"></script>
 
 </body>
+<!-- canvas and tools initialization and default colour -->
+<script src="./setup.js"></script>
+
+
 <!-- colour change logic -->
-<script>
-    let gtool = document.querySelector("#green");
-    let btool = document.querySelector("#blue");
-    let rtool = document.querySelector("#red");
-
-
-    gtool.addEventListener("click",
-        function () {
-            tool.strokeStyle = "green";
-        })
-    rtool.addEventListener("click",
-        function () {
-            tool.strokeStyle = "red";
-
-        })
-    btool.addEventListener("click",
-        function () {
-            tool.strokeStyle = "blue"
-        })
-</script>
+<script src="./colourC.js"></script>
 
 <!-- pencil - rect - line - code -->
-<script>
-    let canvasBoard = document.querySelector("canvas");
-    // canvas default size is small.
-    canvasBoard.height = window.innerHeight;
-    canvasBoard.width = window.innerWidth;
-    // or
-    // canvasBoard.height = 600;
-    // canvasBoard.width = 300;
-
-    // creating a tool by which we can draw in canvas
-    let tool = canvasBoard.getContext("2d");
-    let body = document.querySelector("body");
-    
-    // solving margin issue casue of icons in the board
-    let extraTop = canvasBoard.getBoundingClientRect().top;
-
-    let ix, iy, Fx, Fy;
-    let pencilswitch = false;
-
-    body.addEventListener("mousedown",
-        function (e) {
-            ix = e.clientX - 4;
-            iy = e.clientY - extraTop;
-            if(currtool == "pencil"){
-                pencilswitch = true;
-            }
-            
-
-        })
-
-    body.addEventListener("mouseup",
-        function (e) {
-
-            Fx = e.clientX - 5;
-            Fy = e.clientY - extraTop + 4;
-            let height = Fy - iy;
-            let width = Fx - ix;
-            if (currtool == "rect") {
-                tool.strokeRect(ix, iy, width, height);
-            } else if (currtool == "line") {
-                tool.beginPath();
-                tool.moveTo(ix, iy);
-                tool.lineTo(Fx, Fy);
-                tool.stroke();
-            }else if(currtool == "pencil"){
-                pencilswitch = false;
-            }
-        })
-
-        // for pencil
-    body.addEventListener("mousemove",
-        function (e) {
-            if (pencilswitch == false) {
-                return;
-            }
-            Fx = e.clientX - 5;
-            Fy = e.clientY - extraTop + 4;
-
-            tool.beginPath();
-            tool.moveTo(ix, iy);
-            tool.lineTo(Fx, Fy);
-            tool.stroke();
-            ix = Fx;
-            iy = Fy;
-
-        })
-</script>
+<script src="./tools.js"></script>
 
 </html>
