@@ -168,4 +168,5 @@ line.addEventListener("click",
             }
         }
         tool.lineWidth = linesize;
+        
     })
