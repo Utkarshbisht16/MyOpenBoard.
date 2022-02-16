@@ -2,7 +2,7 @@
         .tool-box {
 
             height: 120px;
-            width: 80vw;
+            width: 90vw;
             margin: 0 auto;
             display: flex;
             justify-content: space-evenly;
@@ -12,21 +12,28 @@
 
         }
         .fas {
-            font-size: 3rem;
-            
+            font-size: 3rem; 
         }
-
         .fa-regular {
             font-size: 3rem;
-            
         }
         .tool {
-            /* border: 1px solid blue; */
+            padding: 2px;
             height: 60px;
             width: 60px;
+            display: flex;
+            justify-content: space-evenly;
             align-items: center;
+            cursor: pointer;
         }
-
+        .tool img:hover{
+            transform: scale(1.1);
+            box-shadow: 2px 2px 5px red;
+        }
+        #rect:hover{
+            transform: scale(1.1);
+            box-shadow: 2px 2px 5px red;
+        }
         .colourContainer {
             height: 50px;
             width: 110px;
@@ -34,24 +41,19 @@
             align-items: center;
             justify-content: space-evenly;
             border: 1px solid black;
-
         }
-
         .colour {
             height: 30px;
             width: 30px;
             border: 1px solid black;
             border-radius: 50%;
         }
-
         #blue {
             background-color: lightblue;
         }
-
         #red {
             background-color: lightpink;
         }
-
         #green {
             background-color: lightgreen;
         }
@@ -64,7 +66,7 @@
         .size-box {
             width: 100px;
             height: 30px;
-            margin-top: 8%;
+            margin-top: 70%;
             border: 1px solid gray;
             /* display: flex; */
             align-items: center;
@@ -72,32 +74,27 @@
             display: none;
         } 
         .size {
-            background-color: aqua;
+            background-color: brown;
             border-radius: 50%; 
         }
-
         .size1 {
             height: 10px;
             width: 10px;
         }
-
         .size2 {
             height: 14px;
             width: 14px;
         }
-
         .size3 {
             height: 18px;
             width: 18px;
         }
-
         .size4 {
             height: 22px;
             width: 22px;
         }
         #stickyTool{
             font-size: 3rem;
-
         }
         /* sticky css */
         .sticky{

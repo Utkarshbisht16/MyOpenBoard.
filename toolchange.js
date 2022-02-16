@@ -64,8 +64,6 @@ line.addEventListener("click",
         }
     })
 
-
-
     // size change logic
     let pencilsize = 1;
     let erasersize = 2;
